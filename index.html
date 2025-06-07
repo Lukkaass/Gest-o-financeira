@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestão Financeira</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Gestor Financeiro</h1>
+    <form id="financeForm">
+      <select id="tipo">
+        <option value="Receita">Receita</option>
+        <option value="Despesa">Despesa</option>
+        <option value="Custo">Custo</option>
+      </select>
+
+      <select id="subtipo">
+        <option value="Fixo">Fixo</option>
+        <option value="Variável">Variável</option>
+      </select>
+
+      <input type="text" id="descricao" placeholder="Descrição" required />
+      <input type="number" id="valor" placeholder="Valor" required />
+      <input type="text" id="categoria" placeholder="Categoria (ex: Moradia, Alimentação)" required />
+      <input type="text" id="conta" placeholder="Conta Bancária" required />
+      <input type="text" id="recorrencia" placeholder="Recorrência (ex: 3x, Mensal)" required />
+      <input type="date" id="data" required />
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <div id="saldo">Saldo Atual: R$ 0.00</div>
+    <div>
+      <label for="filtroMes">Filtrar por mês:</label>
+      <input type="month" id="filtroMes" />
+    </div>
+    <div id="records" class="records"></div>
+
+    <canvas id="graficoFinanceiro" width="400" height="200"></canvas>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
